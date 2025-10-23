@@ -1,7 +1,7 @@
 class DSU
 {
 public:
-    DSU(int n) : parent(100001, -1), numSet(n) {}
+    DSU(int n) : parent(n + 1, -1), numSet(n) {}
 
     int numSet;
     vector<int> parent;
