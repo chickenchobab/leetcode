@@ -1,7 +1,7 @@
 class DSU
 {
 public:
-    DSU(int n) : parent(n + 1, -1), numSet(n) {}
+    DSU(int n) : parent(100001, -1), numSet(n) {}
 
     int numSet;
     vector<int> parent;
@@ -28,11 +28,12 @@ public:
     }
 };
 
-vector<pair<int, int>> edgesPerType[3];
-
 class Solution {
 public:
     int maxNumEdgesToRemove(int n, vector<vector<int>>& edges) {
+        
+        vector<pair<int, int>> edgesPerType[3];
+
         for (vector<int>& edge : edges)
         {
             edgesPerType[edge[0] - 1].push_back({edge[1], edge[2]});
@@ -46,7 +47,7 @@ public:
             numConnection += dsu[2].unite(a, b);
         }
 
-        for (int t = 0; t < 2; ++t)
+        for (int t = 0; t < 2; ++t) 
         {
             for (auto [a, b] : edgesPerType[2])
             {
@@ -55,7 +56,7 @@ public:
                     ++numConnection;
                 }
             }
-            
+
             for (auto [a, b] : edgesPerType[t])
             {
                 if (dsu[t].unite(a, b) && dsu[2].find(a) != dsu[2].find(b))
@@ -66,15 +67,15 @@ public:
 
         }
 
-        for (int t = 0; t < 3; ++t)
-        {
-            cout << t << ": ";
-            for (int i = 1; i <= n; ++i)
-            {
-                cout << dsu[t].parent[i] << ' ';
-            }
-            cout << endl;
-        }
+        // for (int t = 0; t < 3; ++t)
+        // {
+        //     cout << t << ": ";
+        //     for (int i = 1; i <= n; ++i)
+        //     {
+        //         cout << dsu[t].parent[i] << ' ';
+        //     }
+        //     cout << endl;
+        // }
 
         if (dsu[0].numSet == 1 && dsu[1].numSet == 1)
         {
