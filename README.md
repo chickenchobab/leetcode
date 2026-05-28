@@ -6,10 +6,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0345-reverse-vowels-of-a-string](https://github.com/chickenchobab/LeetCode/tree/main/0345-reverse-vowels-of-a-string/) | Easy |
 | [1768-merge-strings-alternately](https://github.com/chickenchobab/LeetCode/tree/main/1768-merge-strings-alternately/) | Easy |
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0345-reverse-vowels-of-a-string](https://github.com/chickenchobab/LeetCode/tree/main/0345-reverse-vowels-of-a-string/) | Easy |
 | [1071-greatest-common-divisor-of-strings](https://github.com/chickenchobab/LeetCode/tree/main/1071-greatest-common-divisor-of-strings/) | Easy |
 | [1768-merge-strings-alternately](https://github.com/chickenchobab/LeetCode/tree/main/1768-merge-strings-alternately/) | Easy |
 ## Math
