@@ -2,9 +2,13 @@ class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
 
-        int mn = min(word1.size(), word2.size());
+        int a = word1.size();
+        int b = word2.size();
+        int mn = min(a, b);
+        int mx = max(a, b);
+
         string output;
-        output.resize(word1.size() + word2.size());
+        output.resize(a + b);
 
         for (int i = 0; i < mn; ++i)
         {
@@ -12,9 +16,9 @@ public:
             output[i * 2 + 1] = word2[i];
         }
 
-        const string& longer = (mn == word1.size() ? word2 : word1);
+        const string& longer = (a < b ? word2 : word1);
 
-        for (int i = 2 * mn, j = mn; j < longer.size(); ++i, ++j)
+        for (int i = 2 * mn, j = mn; j < mx; ++i, ++j)
         {
             output[i] = longer[j];
         }
